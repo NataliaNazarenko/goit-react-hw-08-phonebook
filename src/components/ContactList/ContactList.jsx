@@ -2,7 +2,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { NotifyOptions } from '../styles/NotifyOptions';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteContact, toggleFavorite } from 'redux/contacts/operations';
+import { deleteContact } from 'redux/contacts/operations';
 import { BsFillStarFill, BsFillPersonDashFill } from 'react-icons/bs';
 import { getFilterContacts } from 'redux/contacts/selectors';
 import {
@@ -27,22 +27,6 @@ export function ContactList() {
     }
   };
 
-  const handleToggleFavorite = async (id, isFavorite, name) => {
-    try {
-      const data = await dispatch(toggleFavorite({ id, isFavorite, name })).unwrap();
-      if (isFavorite) {
-        toast.info(
-          `Contact with name ${data.name} has been removed from favorites!`,
-          NotifyOptions
-        );
-      } else {
-        toast.info(`Contact with name ${data.name} has been added to favorites!`, NotifyOptions);
-      }
-    } catch (error) {
-      console.error('Error toggling favorite:', error);
-    }
-  };
-
   return (
     <ContactsList>
       {contacts.map(({ id, name, number, isFavorite }) => {
@@ -52,10 +36,7 @@ export function ContactList() {
               {name}: {number}
             </Contact>
             <Wrapper>
-              <Icon
-                isFavorite={isFavorite}
-                onClick={() => handleToggleFavorite(id, isFavorite, name)}
-              >
+              <Icon isFavorite={isFavorite}>
                 <BsFillStarFill color={isFavorite ? 'yellow' : 'gray'} />
               </Icon>
               <DeleteButton onClick={() => handleDeleteContact(id, name)}>

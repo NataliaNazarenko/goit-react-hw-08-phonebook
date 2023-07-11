@@ -1,8 +1,7 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
-import { fetchContacts, addContact, deleteContact, toggleFavorite } from './operations';
+import { fetchContacts, addContact, deleteContact } from './operations';
 
-const getActions = type =>
-  isAnyOf(fetchContacts[type], addContact[type], deleteContact[type], toggleFavorite[type]);
+const getActions = type => isAnyOf(fetchContacts[type], addContact[type], deleteContact[type]);
 
 const contactsSlice = createSlice({
   name: 'contacts',
@@ -23,12 +22,6 @@ const contactsSlice = createSlice({
       .addCase(deleteContact.fulfilled, (state, { payload }) => {
         const index = state.items.findIndex(contact => contact.id === payload.id);
         state.items.splice(index, 1);
-      })
-      .addCase(toggleFavorite.fulfilled, (state, { payload }) => {
-        const contact = state.items.find(contact => contact.id === payload.id);
-        if (contact) {
-          contact.isFavorite = payload.isFavorite;
-        }
       })
       .addMatcher(getActions('pending'), state => {
         state.isLoading = true;
