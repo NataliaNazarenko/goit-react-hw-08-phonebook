@@ -7,7 +7,7 @@ export const Link = styled(NavLink)`
   padding: 12px;
   font-weight: 700;
   color: ${props => props.theme.colors.accent};
-  font-size: ${props => props.theme.fontSizes.large};
+  font-size: ${props => props.theme.fontSizes.medium};
 
   &:hover {
     color: ${props => props.theme.colors.white};
