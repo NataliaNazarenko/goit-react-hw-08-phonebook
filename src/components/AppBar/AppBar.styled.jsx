@@ -5,7 +5,7 @@ export const Header = styled.header`
   margin: 0 auto 20px auto;
 
   background: ${props => props.theme.colors.mainBackground};
-  width: 800px;
+  width: 980px;
 
   border-bottom: 1px solid ${props => props.theme.colors.accent};
   padding: 8px 0;
