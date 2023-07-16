@@ -22,7 +22,7 @@ export const Content = styled.div`
 `;
 
 export const FormTitle = styled.h2`
-  margin-top: 40px;
+  margin-top: 20px;
   color: ${props => props.theme.colors.dark};
   font-size: ${props => props.theme.fontSizes.large};
   line-height: ${props => props.theme.spacing(8)};
@@ -50,7 +50,7 @@ export const Label = styled.label`
 
 export const Input = styled.input`
   display: block;
-  padding: ${props => props.theme.spacing(1)} 0;
+  padding: ${props => props.theme.spacing(1)};
   color: ${props => props.theme.colors.dark};
   width: 100%;
   border-radius: ${props => props.theme.spacing(1)};

@@ -44,6 +44,7 @@ export const DeleteButton = styled.button`
   border-radius: ${props => props.theme.spacing(1.25)};
   box-shadow: ${props => props.theme.shadows.small};
   cursor: pointer;
+  margin-left: auto;
 
   & svg {
     width: 18px;
@@ -53,25 +54,6 @@ export const DeleteButton = styled.button`
 
   :hover {
     background: ${props => props.theme.colors.accent};
-  }
-`;
-
-export const Icon = styled.div`
-  position: relative;
-  width: 18px;
-  height: 18px;
-  cursor: pointer;
-
-  & svg {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    fill: ${props => (props.isFavorite ? '#f58e03' : 'none')};
-    stroke: ${props => (props.isFavorite ? 'none' : '#4f46e5')};
-    stroke-width: 1px;
-    pointer-events: none;
   }
 `;
 

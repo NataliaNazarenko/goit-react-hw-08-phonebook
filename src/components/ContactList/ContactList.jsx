@@ -3,14 +3,13 @@ import 'react-toastify/dist/ReactToastify.css';
 import { NotifyOptions } from '../styles/NotifyOptions';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteContact } from 'redux/contacts/operations';
-import { BsFillStarFill, BsFillPersonDashFill } from 'react-icons/bs';
+import { BsFillPersonDashFill } from 'react-icons/bs';
 import { getFilterContacts } from 'redux/contacts/selectors';
 import {
   ContactsList,
   ContactItem,
   Contact,
   DeleteButton,
-  Icon,
   Wrapper,
 } from './ContactList.styled.jsx';
 
@@ -36,9 +35,6 @@ export function ContactList() {
               {name}: {number}
             </Contact>
             <Wrapper>
-              <Icon isFavorite={isFavorite}>
-                <BsFillStarFill color={isFavorite ? 'yellow' : 'gray'} />
-              </Icon>
               <DeleteButton onClick={() => handleDeleteContact(id, name)}>
                 <BsFillPersonDashFill />
               </DeleteButton>

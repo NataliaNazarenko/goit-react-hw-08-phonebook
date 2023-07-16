@@ -9,7 +9,8 @@ export const Wrapper = styled.div`
 
 export const Title = styled.h1`
   font-weight: 900;
-  font-size: ${props => props.theme.fontSizes.large};
+  font-size: ${props => props.theme.fontSizes.medium};
   text-align: center;
+  margin-right: auto;
   color: ${props => props.theme.colors.dark};
 `;

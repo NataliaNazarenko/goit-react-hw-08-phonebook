@@ -50,7 +50,7 @@ export const Label = styled.label`
 
 export const Input = styled.input`
   display: block;
-  padding: ${props => props.theme.spacing(1)} 0;
+  padding: ${props => props.theme.spacing(1)};
   color: ${props => props.theme.colors.dark};
   width: 100%;
   border-radius: ${props => props.theme.spacing(1)};

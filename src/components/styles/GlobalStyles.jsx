@@ -1,5 +1,6 @@
 import { css } from '@emotion/react';
 import { theme } from './theme';
+import image from '../images/kisspng-telephone-call-landline-handset-blue-phone-5aa57b7c21f4b9.3916346715207944921391.png';
 
 export const GlobalStyles = css`
   html {
@@ -12,7 +13,16 @@ export const GlobalStyles = css`
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
       'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     background: ${theme.colors.mainBackground};
+    background-image: url(${image});
+    background-color: #e2b06d;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: 50% auto;
+
     min-height: 100vh;
+
+    background-attachment: fixed;
 
     font-style: normal;
   }
