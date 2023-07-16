@@ -1,42 +1,52 @@
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchContacts } from 'redux/contacts/operations.js';
-import { getError, getIsLoading, getContacts } from 'redux/contacts/selectors';
-import { Container, Wrapper } from './App.styled.jsx';
-import { Section } from 'components/Section/index.js';
-import { ContactForm } from 'components/ContactForm/index.js';
-import { ContactList } from 'components/ContactList/index.js';
-import { Filter } from 'components/Filter/index.js';
+import { useEffect, lazy } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Layout from 'layout/index';
+import { PrivateRoute } from 'components/PrivateRoute.js';
+import { RestrictedRoute } from 'components/RestrictedRoute.js';
+import { refreshUser } from 'redux/auth/operations';
+import { useAuth } from 'hooks/index';
+import { useDispatch } from 'react-redux';
+import { Wrapper } from './App.styled.jsx';
+
+const Home = lazy(() => import('pages/Home'));
+const Register = lazy(() => import('pages/Register'));
+const Login = lazy(() => import('pages/Login'));
+const Contacts = lazy(() => import('pages/Contacts'));
 
 export const App = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(getContacts);
-  const isLoading = useSelector(getIsLoading);
-  const error = useSelector(getError);
+  const { isRefreshing } = useAuth();
 
   useEffect(() => {
-    dispatch(fetchContacts());
+    dispatch(refreshUser());
   }, [dispatch]);
 
-  return (
-    <Container>
-      <Section title="Phonebook">
-        <ContactForm />
-      </Section>
-      <ToastContainer />
-      <Section title="Contacts">
-        {contacts.length > 0 ? (
-          <Filter title="Find contact by name" />
-        ) : (
-          <Wrapper>Add contact!</Wrapper>
-        )}
-        {isLoading && !error && <b>Request in progress...</b>}
+  return isRefreshing ? (
+    <p>User update...</p>
+  ) : (
+    <Wrapper>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
 
-        {contacts.length > 0 && <ContactList />}
-      </Section>
-      <ToastContainer />
-    </Container>
+          <Route
+            path="/register"
+            element={<RestrictedRoute redirectTo="/login" component={<Register />} />}
+          />
+
+          <Route
+            path="/login"
+            element={<RestrictedRoute redirectTo="/contacts" component={<Login />} />}
+          />
+
+          <Route
+            path="/contacts"
+            element={<PrivateRoute redirectTo="/login" component={<Contacts />} />}
+          />
+        </Route>
+
+        <Route path="*" element={<Home />} />
+      </Routes>
+    </Wrapper>
   );
 };
