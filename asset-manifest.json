@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/goit-react-hw-08-phonebook/static/css/main.cd2e038f.css",
-    "main.js": "/goit-react-hw-08-phonebook/static/js/main.1962fded.js",
-    "static/js/349.a0970023.chunk.js": "/goit-react-hw-08-phonebook/static/js/349.a0970023.chunk.js",
+    "main.js": "/goit-react-hw-08-phonebook/static/js/main.f0442863.js",
+    "static/js/349.895b7648.chunk.js": "/goit-react-hw-08-phonebook/static/js/349.895b7648.chunk.js",
     "static/js/11.fdf728b2.chunk.js": "/goit-react-hw-08-phonebook/static/js/11.fdf728b2.chunk.js",
     "static/js/767.53623db3.chunk.js": "/goit-react-hw-08-phonebook/static/js/767.53623db3.chunk.js",
     "static/js/640.0ec877ce.chunk.js": "/goit-react-hw-08-phonebook/static/js/640.0ec877ce.chunk.js",
@@ -10,8 +10,8 @@
     "static/media/kisspng-telephone-call-landline-handset-blue-phone-5aa57b7c21f4b9.png": "/goit-react-hw-08-phonebook/static/media/kisspng-telephone-call-landline-handset-blue-phone-5aa57b7c21f4b9.3916346715207944921391.d3a3ecefe80d7187dc80.png",
     "index.html": "/goit-react-hw-08-phonebook/index.html",
     "main.cd2e038f.css.map": "/goit-react-hw-08-phonebook/static/css/main.cd2e038f.css.map",
-    "main.1962fded.js.map": "/goit-react-hw-08-phonebook/static/js/main.1962fded.js.map",
-    "349.a0970023.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/349.a0970023.chunk.js.map",
+    "main.f0442863.js.map": "/goit-react-hw-08-phonebook/static/js/main.f0442863.js.map",
+    "349.895b7648.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/349.895b7648.chunk.js.map",
     "11.fdf728b2.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/11.fdf728b2.chunk.js.map",
     "767.53623db3.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/767.53623db3.chunk.js.map",
     "640.0ec877ce.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/640.0ec877ce.chunk.js.map",
@@ -19,6 +19,6 @@
   },
   "entrypoints": [
     "static/css/main.cd2e038f.css",
-    "static/js/main.1962fded.js"
+    "static/js/main.f0442863.js"
   ]
 }
